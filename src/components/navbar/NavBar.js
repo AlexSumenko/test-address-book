@@ -7,10 +7,10 @@ const NavBar = () => {
   return (
     <nav className='navbar'>
       <Link to='/' className='navbar__item'>
-        <div>Test</div>
+        <div>Address List</div>
       </Link>
       <Link to='/' className='navbar__item'>
-        <div>Test</div>
+        <div>Add new address</div>
       </Link>
     </nav>
   );

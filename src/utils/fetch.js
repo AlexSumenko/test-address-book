@@ -7,6 +7,11 @@ export const getData = url => {
 export const postData = url => {
   fetch(`${API_CONFIG.baseUrl}/${url}`, {
     method: 'POST',
-    body: JSON.stringify({ test: 1, test1: 2 }),
+    body: JSON.stringify({
+      name: 'First test address',
+      address: 'Tallinn, Tartu mnt 13',
+      latitude: 59.4344315,
+      longitude: 24.7590667,
+    }),
   });
 };
