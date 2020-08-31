@@ -1,3 +1,5 @@
+@import '../../../assets/variables';
+
 .button {
   color: white;
   padding: 10px;
@@ -5,10 +7,22 @@
   border: none;
 }
 
+.button:hover {
+  cursor: pointer;
+}
+
 .button--info {
-  background-color: #2629d6;
+  background-color: $ad-color-button-info;
 }
 
 .button--warning {
-  background-color: #9b3439;
+  background-color: $ad-color-button-warning;
+}
+
+.button--info:hover {
+  background-color: $ad-color-button-info-hover;
+}
+
+.button--warning:hover {
+  background-color: $ad-color-button-warning-hover;
 }

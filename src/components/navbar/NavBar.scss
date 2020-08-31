@@ -1,10 +1,12 @@
+@import '../../../assets/variables';
+
 .navbar {
   position: sticky;
   top: 0;
   left: 0;
   min-width: 100%;
   min-height: 60px;
-  background-color: #4c6277;
+  background-color: $ad-color-navbar-background;
   display: flex;
   flex-direction: row;
 }
@@ -19,5 +21,5 @@
 
 .navbar__item:hover,
 .navbar__item:active {
-  background-color: #5c3fc2;
+  background-color: $ad-color-navbar-background-hover;
 }
