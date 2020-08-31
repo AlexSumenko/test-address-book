@@ -1,7 +1,22 @@
 .navbar {
-    position: sticky;
-    top: 0;
-    left: 0;
-    min-height: 60px;
-    background-color: #4c6277;
+  position: sticky;
+  top: 0;
+  left: 0;
+  min-height: 60px;
+  background-color: #4c6277;
+  display: flex;
+  flex-direction: row;
+}
+
+.navbar__item {
+  padding: 20px 10px;
+  border-right: 1px white solid;
+  min-width: 100px;
+  text-decoration: none;
+  color: white;
+}
+
+.navbar__item:hover,
+.navbar__item:active {
+  background-color: #5c3fc2;
 }
