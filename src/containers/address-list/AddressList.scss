@@ -1,5 +1,9 @@
+.addresses {
+  width: 100%;
+  overflow-x: auto;
+}
+
 .addresses__table {
-  margin: auto;
   width: 100%;
   border-collapse: collapse;
   border-bottom: 1px solid #ddd;
@@ -15,6 +19,6 @@ td {
   background-color: #e3e3e3;
 }
 
-h1 {
+.addresses__header {
   margin: 1rem 0;
 }
