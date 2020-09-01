@@ -1,0 +1,21 @@
+@import '../../../assets/_variables';
+
+.addresses__table {
+  width: 100%;
+  border-collapse: collapse;
+  border-bottom: 1px solid $ad-color-table-separator;
+
+  th,
+  td {
+    border-bottom: 1px solid $ad-color-table-separator;
+    padding: 15px;
+  }
+
+  tr {
+    cursor: pointer;
+  }
+}
+
+.addresses__empty-message {
+  margin: auto;
+}

@@ -1,20 +1,6 @@
-@import '../../../assets/_variables';
-
 .addresses {
   width: 100%;
   overflow-x: auto;
-
-  &__table {
-    width: 100%;
-    border-collapse: collapse;
-    border-bottom: 1px solid $ad-color-table-separator;
-
-    th,
-    td {
-      border-bottom: 1px solid $ad-color-table-separator;
-      padding: 15px;
-    }
-  }
 
   &__header {
     margin: 1rem 0;
