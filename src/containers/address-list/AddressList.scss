@@ -1,20 +1,22 @@
+@import '../../../assets/_variables';
+
 .addresses {
   width: 100%;
   overflow-x: auto;
-}
 
-.addresses__table {
-  width: 100%;
-  border-collapse: collapse;
-  border-bottom: 1px solid #ddd;
-}
+  &__table {
+    width: 100%;
+    border-collapse: collapse;
+    border-bottom: 1px solid $ad-color-table-separator;
 
-.addresses__table th,
-td {
-  border-bottom: 1px solid #ddd;
-  padding: 15px;
-}
+    th,
+    td {
+      border-bottom: 1px solid $ad-color-table-separator;
+      padding: 15px;
+    }
+  }
 
-.addresses__header {
-  margin: 1rem 0;
+  &__header {
+    margin: 1rem 0;
+  }
 }

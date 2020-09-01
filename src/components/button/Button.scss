@@ -1,28 +1,28 @@
-@import '../../../assets/variables';
+@import '../../../assets/_variables';
 
 .button {
-  color: white;
+  color: $ad-color-white;
   padding: 10px;
-  border-radius: 10px;
+  border-radius: 6px;
   border: none;
-}
 
-.button:hover {
-  cursor: pointer;
-}
+  &:hover {
+    cursor: pointer;
+  }
 
-.button--info {
-  background-color: $ad-color-button-info;
-}
+  &--info {
+    background-color: $ad-color-button-info;
 
-.button--warning {
-  background-color: $ad-color-button-warning;
-}
+    &:hover {
+      background-color: $ad-color-button-info-hover;
+    }
+  }
 
-.button--info:hover {
-  background-color: $ad-color-button-info-hover;
-}
+  &--warning {
+    background-color: $ad-color-button-warning;
 
-.button--warning:hover {
-  background-color: $ad-color-button-warning-hover;
+    &:hover {
+      background-color: $ad-color-button-warning-hover;
+    }
+  }
 }
