@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
@@ -6,10 +6,6 @@ import Button from '../../components/button/Button';
 import './AddressTableBuilder.scss';
 
 const AddressTableBuilder = props => {
-  useEffect(() => {
-    console.log(props.addresses);
-  }, [props.addresses]);
-
   let addressesTable = (
     <div className='addresses__empty-message'>No addresses available</div>
   );
