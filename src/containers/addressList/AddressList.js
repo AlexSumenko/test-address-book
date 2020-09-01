@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { getData } from '../../utils/fetch';
 
-import AddressesTableBuilder from '../../components/address-table-builder/AddressTableBuilder';
+import AddressesTableBuilder from '../../components/addressTableBuilder/AddressTableBuilder';
 import './AddressList.scss';
 
 const AddressList = () => {
