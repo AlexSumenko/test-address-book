@@ -8,9 +8,6 @@ const AddressList = () => {
   const [addresses, setAddresses] = useState(null);
 
   useEffect(() => {
-    getData('/addresses.json')
-      .then(res => setAddresses(res))
-      .catch(err => console.log(err));
     console.log('addresses:', addresses);
   }, []);
 
