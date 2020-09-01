@@ -1,11 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
 import Button from '../../components/button/Button';
 import './AddressTableBuilder.scss';
 
 const AddressTableBuilder = props => {
-  const [addresses, setAddresses] = useState(null);
+  const { addresses } = props;
+  useEffect(() => {
+    console.log(addresses);
+  }, [addresses]);
 
   let addressesTable = (
     <div className='addresses__empty-message'>No addresses available</div>
@@ -56,4 +60,10 @@ const AddressTableBuilder = props => {
 //   addresses: [],
 // };
 
-export default AddressTableBuilder;
+const mapStateToProps = state => {
+  return {
+    addresses: state.addresses,
+  };
+};
+
+export default connect(mapStateToProps)(AddressTableBuilder);
