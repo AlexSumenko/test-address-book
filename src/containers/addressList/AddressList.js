@@ -6,11 +6,11 @@ import AddressesTableBuilder from '../../components/addressTableBuilder/AddressT
 import './AddressList.scss';
 
 const AddressList = props => {
-  const { saveAddresses } = props;
+  const { setAddresses } = props;
 
   useEffect(() => {
-    saveAddresses();
-  }, [saveAddresses]);
+    setAddresses();
+  }, [setAddresses]);
 
   return (
     <>
@@ -24,7 +24,7 @@ const AddressList = props => {
 
 const dispatchStateToProps = dispatch => {
   return {
-    saveAddresses: () => dispatch(actions.saveAddresses()),
+    setAddresses: () => dispatch(actions.saveAddresses()),
   };
 };
 

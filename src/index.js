@@ -12,7 +12,7 @@ import './index.scss';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-const rootReducer = combineReducers({ addressesReducer });
+const rootReducer = combineReducers({ add: addressesReducer });
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
