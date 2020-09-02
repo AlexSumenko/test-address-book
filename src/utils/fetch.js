@@ -15,3 +15,9 @@ export const postData = url => {
     }),
   });
 };
+
+export const deleteData = url => {
+  fetch(`${API_CONFIG.baseUrl}/${url}`, {
+    method: 'DELETE',
+  }).then(res => res.json());
+};

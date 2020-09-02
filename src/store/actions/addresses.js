@@ -1,5 +1,5 @@
 import * as actionTypes from './actionTypes';
-import { getData } from '../../utils/fetch';
+import { getData, deleteData } from '../../utils/fetch';
 
 const getAddresses = addresses => {
   return {
@@ -22,9 +22,16 @@ export const saveAddresses = () => {
   };
 };
 
-export const deleteAddress = addressId => {
+export const removeAddress = addressId => {
   return {
     type: actionTypes.DELETE_ADDRESS,
     addressId: addressId,
+  };
+};
+
+export const deleteAddress = addressId => {
+  return dispatch => {
+    deleteData(`/addresses/${addressId}.json`);
+    dispatch(removeAddress(addressId));
   };
 };
