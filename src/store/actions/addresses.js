@@ -17,7 +17,6 @@ export const saveAddresses = () => {
           fetchedAddresses.push({ ...res[key], id: key });
         }
         dispatch(getAddresses(fetchedAddresses));
-        console.log(fetchedAddresses);
       })
       .catch(err => console.log(err));
   };
