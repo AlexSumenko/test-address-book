@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../../store/actions/index';
 
+import Button from '../../components/button/Button';
+
 import './addAddress.scss';
 
 const AddAddress = props => {
@@ -23,8 +25,9 @@ const AddAddress = props => {
     <>
       <h1>Add new address</h1>
       <form className='add-new-address__form'>
-        <label>Address Name:</label>
+        <label className='add-new-address__form__label'>Address Name:</label>
         <input
+          className='add-new-address__form__input'
           type='text'
           value={address.name}
           name='name'
@@ -32,8 +35,9 @@ const AddAddress = props => {
           placeholder='Please enter address naming'
           required
         />
-        <label>Address:</label>
+        <label className='add-new-address__form__label'>Address:</label>
         <input
+          className='add-new-address__form__input'
           type='text'
           value={address.address}
           name='address'
@@ -41,8 +45,9 @@ const AddAddress = props => {
           placeholder='Please enter actual address'
           required
         />
-        <label>Latitude</label>
+        <label className='add-new-address__form__label'>Latitude:</label>
         <input
+          className='add-new-address__form__input'
           type='number'
           value={address.latitude}
           name='latitude'
@@ -50,8 +55,9 @@ const AddAddress = props => {
           placeholder='Please enter latitude'
           required
         />
-        <label>Longitude:</label>
+        <label className='add-new-address__form__label'>Longitude:</label>
         <input
+          className='add-new-address__form__input'
           type='number'
           value={address.longitude}
           name='longitude'
@@ -59,9 +65,9 @@ const AddAddress = props => {
           placeholder='Please enter longitude'
           required
         />
-        <button type='button' onClick={submitAddress(address)}>
+        <Button type='button' clicked={submitAddress(address)}>
           Submit
-        </button>
+        </Button>
       </form>
     </>
   );

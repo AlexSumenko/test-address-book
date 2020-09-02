@@ -20,7 +20,7 @@ const Button = props => {
   return (
     <button
       type='button'
-      onClick={props.deleted}
+      onClick={props.deleted ? props.deleted : props.clicked}
       className={buttonClasses.join(' ')}
     >
       {props.children}
