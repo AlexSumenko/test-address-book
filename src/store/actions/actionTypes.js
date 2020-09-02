@@ -1,1 +1,2 @@
 export const GET_ADDRESSES = 'GET_ADDRESSES';
+export const DELETE_ADDRESS = 'DELETE_ADDRESS';

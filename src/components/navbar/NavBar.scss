@@ -23,3 +23,13 @@
     background-color: $ad-color-navbar-background-hover;
   }
 }
+
+@media screen and (max-width: 768px) {
+  .navbar__item {
+    width: 50%;
+
+    &:nth-child(2) {
+      border-right: none;
+    }
+  }
+}

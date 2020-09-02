@@ -17,7 +17,15 @@ export const saveAddresses = () => {
           fetchedAddresses.push({ ...res[key], id: key });
         }
         dispatch(getAddresses(fetchedAddresses));
+        console.log(fetchedAddresses);
       })
       .catch(err => console.log(err));
+  };
+};
+
+export const deleteAddress = addressId => {
+  return {
+    type: actionTypes.DELETE_ADDRESS,
+    addressId: addressId,
   };
 };

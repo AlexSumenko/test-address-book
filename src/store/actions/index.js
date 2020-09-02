@@ -1,1 +1,1 @@
-export { saveAddresses } from './addresses';
+export { saveAddresses, deleteAddress } from './addresses';

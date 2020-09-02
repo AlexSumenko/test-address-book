@@ -6,7 +6,7 @@ import AddressesTableBuilder from '../../components/addressTableBuilder/AddressT
 import './AddressList.scss';
 
 const AddressList = props => {
-  const { setAddresses } = props;
+  const { setAddresses, removeAddress } = props;
 
   useEffect(() => {
     setAddresses();
@@ -16,7 +16,9 @@ const AddressList = props => {
     <>
       <h1 className='addresses__header'>List of addresses</h1>
       <div className='addresses'>
-        <AddressesTableBuilder />
+        <AddressesTableBuilder
+          deleted={addressId => removeAddress(addressId)}
+        />
       </div>
     </>
   );
@@ -25,6 +27,7 @@ const AddressList = props => {
 const dispatchStateToProps = dispatch => {
   return {
     setAddresses: () => dispatch(actions.saveAddresses()),
+    removeAddress: addressId => dispatch(actions.deleteAddress(addressId)),
   };
 };
 

@@ -4,16 +4,34 @@ import PropTypes from 'prop-types';
 import './Button.scss';
 
 const Button = props => {
-  return props.messageType === 'warning' ? (
-    <button className='button button--warning'>{props.children}</button>
-  ) : (
-    <button className='button button--info'>{props.children}</button>
+  const buttonClasses = [];
+  buttonClasses.push('button');
+
+  switch (props.messageType) {
+    case 'warning':
+      buttonClasses.push('button--warning');
+      break;
+    case 'info':
+      buttonClasses.push('button--info');
+      break;
+    default:
+  }
+
+  return (
+    <button
+      type='button'
+      onClick={props.deleted}
+      className={buttonClasses.join(' ')}
+    >
+      {props.children}
+    </button>
   );
 };
 
 Button.propTypes = {
   children: PropTypes.string.isRequired,
   messageType: PropTypes.string,
+  deleted: PropTypes.func,
 };
 
 Button.defaultProps = {

@@ -19,19 +19,24 @@ const AddressTableBuilder = props => {
             <th>Address</th>
             <th>Latitude</th>
             <th>Longitude</th>
-            <th>Delete</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
           {props.addresses.map(address => {
             return (
-              <tr key={address.key}>
+              <tr key={address.id}>
                 <td>{address.name}</td>
                 <td>{address.address}</td>
                 <td>{address.latitude}</td>
                 <td>{address.longitude}</td>
                 <td>
-                  <Button messageType='warning'>Delete</Button>
+                  <Button
+                    deleted={props.deleted.bind(this, address.id)}
+                    messageType='warning'
+                  >
+                    Delete
+                  </Button>
                 </td>
               </tr>
             );
@@ -46,6 +51,7 @@ const AddressTableBuilder = props => {
 
 AddressTableBuilder.propTypes = {
   addresses: PropTypes.array,
+  deleted: PropTypes.func,
 };
 
 AddressTableBuilder.defaultProps = {
