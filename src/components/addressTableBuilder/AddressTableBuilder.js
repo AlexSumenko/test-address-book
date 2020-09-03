@@ -32,7 +32,7 @@ const AddressTableBuilder = props => {
                 <td>{address.longitude}</td>
                 <td>
                   <Button
-                    deleted={props.deleted.bind(this, address.id)}
+                    clicked={props.deleted.bind(this, address.id)}
                     messageType='warning'
                   >
                     Delete

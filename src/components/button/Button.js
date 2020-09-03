@@ -4,23 +4,16 @@ import PropTypes from 'prop-types';
 import './Button.scss';
 
 const Button = props => {
-  const buttonClasses = [];
-  buttonClasses.push('button');
+  const buttonClasses = ['button'];
 
-  switch (props.messageType) {
-    case 'warning':
-      buttonClasses.push('button--warning');
-      break;
-    case 'info':
-      buttonClasses.push('button--info');
-      break;
-    default:
+  if (props.messageType) {
+    buttonClasses.push(`button--${props.messageType}`);
   }
 
   return (
     <button
       type='button'
-      onClick={props.deleted ? props.deleted : props.clicked}
+      onClick={props.clicked}
       className={buttonClasses.join(' ')}
     >
       {props.children}
@@ -31,7 +24,7 @@ const Button = props => {
 Button.propTypes = {
   children: PropTypes.string.isRequired,
   messageType: PropTypes.string,
-  deleted: PropTypes.func,
+  clicked: PropTypes.func,
 };
 
 Button.defaultProps = {
