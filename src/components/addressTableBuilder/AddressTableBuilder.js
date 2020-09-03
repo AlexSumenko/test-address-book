@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
@@ -6,6 +7,10 @@ import Button from '../../components/button/Button';
 import './AddressTableBuilder.scss';
 
 const AddressTableBuilder = props => {
+  const addressClickHandler = addressId => {
+    props.history.push(`/address/${addressId}/edit`);
+  };
+
   let addressesTable = (
     <div className='addresses__empty-message'>No addresses available</div>
   );
@@ -25,7 +30,10 @@ const AddressTableBuilder = props => {
         <tbody>
           {props.addresses.map(address => {
             return (
-              <tr key={address.id}>
+              <tr
+                key={address.id}
+                onClick={() => addressClickHandler(address.id)}
+              >
                 <td>{address.name}</td>
                 <td>{address.address}</td>
                 <td>{address.latitude}</td>
@@ -64,4 +72,4 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps)(AddressTableBuilder);
+export default connect(mapStateToProps)(withRouter(AddressTableBuilder));
