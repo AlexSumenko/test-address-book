@@ -29,7 +29,7 @@ Button.propTypes = {
 
 Button.defaultProps = {
   children: 'Click Me',
-  messageType: 'info',
+  messageType: '',
 };
 
 export default Button;

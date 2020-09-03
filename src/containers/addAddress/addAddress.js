@@ -25,9 +25,9 @@ const AddAddress = props => {
     <>
       <h1>Add new address</h1>
       <form className='add-new-address__form'>
-        <label className='add-new-address__form__label'>Address Name:</label>
+        <label className='add-new-address__form--label'>Address Name:</label>
         <input
-          className='add-new-address__form__input'
+          className='add-new-address__form--input'
           type='text'
           value={address.name}
           name='name'
@@ -35,9 +35,9 @@ const AddAddress = props => {
           placeholder='Please enter address naming'
           required
         />
-        <label className='add-new-address__form__label'>Address:</label>
+        <label className='add-new-address__form--label'>Address:</label>
         <input
-          className='add-new-address__form__input'
+          className='add-new-address__form--input'
           type='text'
           value={address.address}
           name='address'
@@ -45,9 +45,9 @@ const AddAddress = props => {
           placeholder='Please enter actual address'
           required
         />
-        <label className='add-new-address__form__label'>Latitude:</label>
+        <label className='add-new-address__form--label'>Latitude:</label>
         <input
-          className='add-new-address__form__input'
+          className='add-new-address__form--input'
           type='number'
           value={address.latitude}
           name='latitude'
@@ -55,9 +55,9 @@ const AddAddress = props => {
           placeholder='Please enter latitude'
           required
         />
-        <label className='add-new-address__form__label'>Longitude:</label>
+        <label className='add-new-address__form--label'>Longitude:</label>
         <input
-          className='add-new-address__form__input'
+          className='add-new-address__form--input'
           type='number'
           value={address.longitude}
           name='longitude'
@@ -65,7 +65,11 @@ const AddAddress = props => {
           placeholder='Please enter longitude'
           required
         />
-        <Button type='button' clicked={submitAddress(address)}>
+        <Button
+          messageType='info'
+          type='button'
+          clicked={submitAddress(address)}
+        >
           Submit
         </Button>
       </form>
