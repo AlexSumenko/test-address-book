@@ -9,7 +9,7 @@ const NavBar = () => {
       <Link to='/' className='navbar__item'>
         <div>Address List</div>
       </Link>
-      <Link to='/add-address' className='navbar__item'>
+      <Link to='/address/add' className='navbar__item'>
         <div>Add new address</div>
       </Link>
     </nav>
