@@ -1,5 +1,5 @@
 import * as actionTypes from './actionTypes';
-import { getData, postData, deleteData, putData } from '../../utils/fetch';
+import { httpAddressRequest } from '../../utils/fetch';
 
 const getAddresses = addresses => {
   return {
@@ -17,7 +17,7 @@ const removeAddress = addressId => {
 
 export const saveAddresses = () => {
   return dispatch => {
-    getData('/addresses.json')
+    httpAddressRequest('/addresses.json', 'GET')
       .then(res => {
         const fetchedAddresses = [];
         for (let key in res) {
@@ -31,19 +31,19 @@ export const saveAddresses = () => {
 
 export const deleteAddress = addressId => {
   return dispatch => {
-    deleteData(`/addresses/${addressId}.json`);
+    httpAddressRequest(`/addresses/${addressId}.json`, 'DELETE');
     dispatch(removeAddress(addressId));
   };
 };
 
 export const addAddress = address => {
   return dispatch => {
-    postData('/addresses.json', address);
+    httpAddressRequest('/addresses.json', 'POST', address);
   };
 };
 
 export const editAddress = (address, addressId) => {
   return dispatch => {
-    putData(`/addresses/${addressId}.json`, address);
+    httpAddressRequest(`/addresses/${addressId}.json`, 'PUT', address);
   };
 };

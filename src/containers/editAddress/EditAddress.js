@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import * as actions from '../../store/actions/index';
 import { connect } from 'react-redux';
-import { getData } from '../../utils/fetch';
+import { httpAddressRequest } from '../../utils/fetch';
 
 import AddressForm from '../../components/addressForm/AddressForm';
 
@@ -11,7 +11,7 @@ const EditAddress = props => {
   const [address, setAddress] = useState(props.address);
 
   useEffect(() => {
-    getData(`/addresses/${props.match.params.id}.json`)
+    httpAddressRequest(`/addresses/${props.match.params.id}.json`, 'GET')
       .then(res => setAddress(res))
       .catch(err => console.log(err));
   }, [props.match.params.id]);
