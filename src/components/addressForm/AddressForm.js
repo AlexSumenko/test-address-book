@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Button from '../button/Button';
+import MapContainer from '../mapContainer/MapContainer';
 
 import './AddressForm.scss';
 
@@ -30,7 +31,7 @@ const AddressForm = props => {
       <label className='add-new-address__form--label'>Latitude:</label>
       <input
         className='add-new-address__form--input'
-        type='number'
+        type='text'
         value={props.address.latitude}
         name='latitude'
         onChange={props.updated}
@@ -40,7 +41,7 @@ const AddressForm = props => {
       <label className='add-new-address__form--label'>Longitude:</label>
       <input
         className='add-new-address__form--input'
-        type='number'
+        type='text'
         value={props.address.longitude}
         name='longitude'
         onChange={props.updated}
@@ -54,6 +55,7 @@ const AddressForm = props => {
       >
         Submit
       </Button>
+      <MapContainer />
     </form>
   );
 };
