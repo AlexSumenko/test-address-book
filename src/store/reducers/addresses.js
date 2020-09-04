@@ -2,6 +2,12 @@ import * as actionTypes from '../actions/actionTypes';
 
 const initialState = {
   addresses: [],
+  currentAddress: {
+    name: '',
+    address: '',
+    latitude: 0,
+    longitude: 0,
+  },
 };
 
 const reducer = (state = initialState, action) => {

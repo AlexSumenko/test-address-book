@@ -6,13 +6,7 @@ import AddressForm from '../../components/addressForm/AddressForm';
 
 const AddAddress = props => {
   const { submitAddress } = props;
-
-  const [address, setAddress] = useState({
-    name: '',
-    address: '',
-    latitude: 0,
-    longitude: 0,
-  });
+  const [address, setAddress] = useState(props.address);
 
   const updateAddressField = event => {
     event.preventDefault();
@@ -31,10 +25,16 @@ const AddAddress = props => {
   );
 };
 
+const mapStateToProps = state => {
+  return {
+    address: state.add.currentAddress,
+  };
+};
+
 const mapDispatchToProps = dispatch => {
   return {
     submitAddress: address => actions.addAddress(address),
   };
 };
 
-export default connect(null, mapDispatchToProps)(AddAddress);
+export default connect(mapStateToProps, mapDispatchToProps)(AddAddress);

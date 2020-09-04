@@ -1,5 +1,5 @@
 import * as actionTypes from './actionTypes';
-import { getData, postData, deleteData } from '../../utils/fetch';
+import { getData, postData, deleteData, putData } from '../../utils/fetch';
 
 const getAddresses = addresses => {
   return {
@@ -39,5 +39,11 @@ export const deleteAddress = addressId => {
 export const addAddress = address => {
   return dispatch => {
     postData('/addresses.json', address);
+  };
+};
+
+export const editAddress = (address, addressId) => {
+  return dispatch => {
+    putData(`/addresses/${addressId}.json`, address);
   };
 };
